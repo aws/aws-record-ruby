@@ -1,4 +1,4 @@
-Unreleased Changes
+2.13.2 (2024-08-21)
 ------------------
 
 * Issue - Allow `global_secondary_index` to be defined in `TableConfig` without 
