@@ -25,16 +25,26 @@ module Aws
         end
       end
 
-      it 'accepts global secondary indexes in the definition' do
-        TableConfig.define do |t|
-          t.model_class(TestModelWithGsi)
-          t.read_capacity_units(2)
-          t.write_capacity_units(2)
-          t.global_secondary_index(:gsi) do |i|
-            i.read_capacity_units(1)
-            i.write_capacity_units(1)
+      context 'global secondary indexes' do
+        it 'accepts with capacity settings defined' do
+          TableConfig.define do |t|
+            t.model_class(TestModelWithGsi)
+            t.read_capacity_units(2)
+            t.write_capacity_units(2)
+            t.global_secondary_index(:gsi) do |i|
+              i.read_capacity_units(1)
+              i.write_capacity_units(1)
+            end
+            t.client_options(stub_responses: true)
           end
-          t.client_options(stub_responses: true)
+        end
+
+        it 'accepts without capacity settings defined' do
+          TableConfig.define do |t|
+            t.model_class(TestModelWithGsi)
+            t.global_secondary_index(:gsi)
+            t.client_options(stub_responses: true)
+          end
         end
       end
 
