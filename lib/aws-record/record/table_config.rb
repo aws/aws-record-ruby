@@ -176,7 +176,7 @@ module Aws
       # @api private
       def global_secondary_index(name, &block)
         gsi = GlobalSecondaryIndex.new
-        gsi.instance_eval(&block)
+        gsi.instance_eval(&block) if block_given?
         @global_secondary_indexes[name] = gsi
       end
 
