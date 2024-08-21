@@ -1,6 +1,8 @@
 Unreleased Changes
 ------------------
 
+* Issue - Allow `global_secondary_index` to be defined without supplying capacity settings. (#140)
+
 2.13.1 (2024-07-18)
 ------------------
 
