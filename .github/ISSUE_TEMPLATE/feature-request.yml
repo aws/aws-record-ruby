@@ -48,7 +48,7 @@ body:
   - type: input
     id: sdk-version
     attributes:
-      label: SDK version used
+      label: aws-sdk-ruby-record version used
     validations:
       required: true
   - type: input
