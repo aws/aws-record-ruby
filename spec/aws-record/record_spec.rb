@@ -143,6 +143,29 @@ module Aws
       end
     end
 
+    describe 'attribute_names' do
+      let(:model) do
+        Class.new do
+          include(Aws::Record)
+          set_table_name('TestTable')
+          string_attr(:uuid, hash_key: true)
+          string_attr(:other_attr)
+        end
+      end
+
+      describe '.attribute_names' do
+        it 'returns the attribute names' do
+          expect(model.attribute_names).to eq(%i[uuid other_attr])
+        end
+      end
+
+      describe '#attribute_names' do
+        it 'returns the attribute names' do
+          expect(model.new.attribute_names).to eq(%i[uuid other_attr])
+        end
+      end
+    end
+
     describe 'inheritance support for table name' do
       let(:parent_model) do
         Class.new do

@@ -77,6 +77,11 @@ module Aws
         @data.hash_copy
       end
 
+      # @return [Array] List of attribute names.
+      def attribute_names
+        self.class.attribute_names
+      end
+
       def self.inherit_attributes(klass)
         superclass_attributes = klass.superclass.instance_variable_get('@attributes')
 
@@ -514,6 +519,11 @@ module Aws
         # @api private
         def attributes
           @attributes
+        end
+
+        # @return [Array] List of attribute names.
+        def attribute_names
+          @attributes.attributes.keys
         end
 
         # @api private
