@@ -1,4 +1,4 @@
-Unreleased Changes
+2.13.3 (2025-01-02)
 ------------------
 
 * Issue - add `attribute_names` class/instance method. (#145)
