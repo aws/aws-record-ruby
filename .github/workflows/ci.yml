@@ -11,7 +11,8 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # change to ubuntu-latest once Ruby 2.5 and JRuby 9.2 is dropped
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
