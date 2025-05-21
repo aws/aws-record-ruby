@@ -631,8 +631,8 @@ module Aws
             end
           end
           update_expressions = []
-          update_expressions << ("SET #{set_expressions.join(', ')}") unless set_expressions.empty?
-          update_expressions << ("REMOVE #{remove_expressions.join(', ')}") unless remove_expressions.empty?
+          update_expressions << "SET #{set_expressions.join(', ')}" unless set_expressions.empty?
+          update_expressions << "REMOVE #{remove_expressions.join(', ')}" unless remove_expressions.empty?
           {
             update_expression: update_expressions.join(' '),
             expression_attribute_names: exp_attr_names,

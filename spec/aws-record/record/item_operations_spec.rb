@@ -479,7 +479,9 @@ module Aws
         it 'passes the correct client, class and key arguments to BatchRead' do
           klass.configure_client(client: stub_client)
           mock_batch_read = double
-          expect(Batch).to receive(:read).with(client: klass.dynamodb_client).and_yield(mock_batch_read).and_return(mock_batch_read)
+          expect(Batch).to receive(:read)
+            .with(client: klass.dynamodb_client)
+            .and_yield(mock_batch_read).and_return(mock_batch_read)
           keys.each do |key|
             expect(mock_batch_read).to receive(:find).with(klass, key)
           end
