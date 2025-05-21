@@ -1,4 +1,4 @@
-Unreleased Changes
+2.13.4 (2025-05-21)
 ------------------
 
 * Issue - Use configured clients for batch reads in `find_all`.
