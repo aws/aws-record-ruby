@@ -553,7 +553,7 @@ module Aws
         #  include all the keys defined in model.
         # @raise [ArgumentError] if the provided keys are a duplicate.
         def find_all(keys)
-          Aws::Record::Batch.read do |db|
+          Aws::Record::Batch.read(client: dynamodb_client) do |db|
             keys.each do |key|
               db.find(self, key)
             end
