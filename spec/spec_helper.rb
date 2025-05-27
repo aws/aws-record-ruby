@@ -5,5 +5,4 @@ require 'rspec'
 SimpleCov.start
 
 require 'aws-record'
-require 'mutex_m'
 require 'active_model'
