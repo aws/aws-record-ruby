@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'mutex_m'
-
 module Aws
   module Record
     class BatchRead
