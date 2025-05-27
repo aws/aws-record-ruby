@@ -14,6 +14,8 @@ group :test do
 
   gem 'rexml' if RUBY_VERSION >= '3.0'
 
+  gem 'mutex_m' if RUBY_VERSION >= '3.4'
+
   if ENV['NEW_RAILS']
     gem 'activemodel'
   else
