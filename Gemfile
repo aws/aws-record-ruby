@@ -17,7 +17,7 @@ group :test do
   if ENV['NEW_RAILS']
     gem 'activemodel'
   else
-    gem 'activemodel', '< 5.0'
+    gem 'activemodel', '< 7.0'
   end
 end
 
