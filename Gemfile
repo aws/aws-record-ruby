@@ -11,16 +11,11 @@ group :test do
   gem 'rspec'
 
   gem 'simplecov', require: false
+  gem 'activemodel', '< 7.0'
 
   gem 'rexml' if RUBY_VERSION >= '3.0'
-
   gem 'mutex_m' if RUBY_VERSION >= '3.4'
 
-  if ENV['NEW_RAILS']
-    gem 'activemodel'
-  else
-    gem 'activemodel', '< 7.0'
-  end
 end
 
 group :docs do
