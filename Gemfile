@@ -7,12 +7,10 @@ gemspec
 gem 'rake', require: false
 
 group :test do
+  gem 'activemodel'
   gem 'cucumber'
   gem 'rspec'
-
-  gem 'activemodel', '< 7.0'
   gem 'simplecov', require: false
-
   gem 'mutex_m' if RUBY_VERSION >= '3.4'
   gem 'rexml' if RUBY_VERSION >= '3.0'
 end
