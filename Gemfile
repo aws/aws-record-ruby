@@ -10,12 +10,11 @@ group :test do
   gem 'cucumber'
   gem 'rspec'
 
-  gem 'simplecov', require: false
   gem 'activemodel', '< 7.0'
+  gem 'simplecov', require: false
 
-  gem 'rexml' if RUBY_VERSION >= '3.0'
   gem 'mutex_m' if RUBY_VERSION >= '3.4'
-
+  gem 'rexml' if RUBY_VERSION >= '3.0'
 end
 
 group :docs do
