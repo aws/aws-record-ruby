@@ -9,16 +9,12 @@ gem 'rake', require: false
 group :test do
   gem 'cucumber'
   gem 'rspec'
-
   gem 'simplecov', require: false
 
-  gem 'rexml' if RUBY_VERSION >= '3.0'
+  gem 'activemodel'
 
-  if ENV['NEW_RAILS']
-    gem 'activemodel'
-  else
-    gem 'activemodel', '< 5.0'
-  end
+  gem 'mutex_m' if RUBY_VERSION >= '3.4'
+  gem 'rexml' if RUBY_VERSION >= '3.0'
 end
 
 group :docs do

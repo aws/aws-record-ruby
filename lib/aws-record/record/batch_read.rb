@@ -38,7 +38,7 @@ module Aws
       # @return [Array] an array of unordered new items
       def execute!
         operation_keys = unprocessed_keys[0..BATCH_GET_ITEM_LIMIT - 1]
-        @unprocessed_keys = unprocessed_keys[BATCH_GET_ITEM_LIMIT..-1] || []
+        @unprocessed_keys = unprocessed_keys[BATCH_GET_ITEM_LIMIT..] || []
 
         operations = build_operations(operation_keys)
         result = @client.batch_get_item(request_items: operations)

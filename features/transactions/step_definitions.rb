@@ -29,11 +29,9 @@ Then('we expect a transact_find result that includes the following items:') do |
 end
 
 When('we run the following code:') do |code|
-  begin
-    @arbitrary_code_ret = eval(code)
-  rescue StandardError => e
-    @arbitrary_code_exception = e
-  end
+  @arbitrary_code_ret = eval(code)
+rescue StandardError => e
+  @arbitrary_code_exception = e
 end
 
 Then('we expect the code to raise an {string} exception') do |exception_class|
