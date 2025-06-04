@@ -347,7 +347,7 @@ module Aws
         opts
       end
 
-      def _add_global_secondary_index_throughput(opts, resp_gsis)
+      def _add_global_secondary_index_throughput(opts, resp_gsis) # rubocop:disable Naming/PredicateMethod
         gsis = resp_gsis.map(&:index_name)
         gsi_updates = []
         gsis.each do |index_name|

@@ -244,7 +244,7 @@ module Aws
         end
       end
 
-      def _perform_save(opts)
+      def _perform_save(opts) # rubocop:disable Naming/PredicateMethod
         force = opts.delete(:force)
         expect_new = expect_new_item?
         if force
