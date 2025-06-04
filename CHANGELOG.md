@@ -1,4 +1,4 @@
-Unreleased Changes
+2.14.0 (2025-06-04)
 ------------------
 
 * Feature - Drop Ruby runtime support for 2.5 and 2.6.
