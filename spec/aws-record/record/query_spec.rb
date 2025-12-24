@@ -8,6 +8,7 @@ module Aws
       let(:klass) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TestTable')
           integer_attr(:id, hash_key: true)
           date_attr(:date, range_key: true)

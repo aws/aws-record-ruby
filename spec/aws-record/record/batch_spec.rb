@@ -10,6 +10,7 @@ describe Aws::Record::Batch do
   describe '.write' do
     Planet = Class.new do
       include(Aws::Record)
+
       integer_attr(:id, hash_key: true)
       string_attr(:name, range_key: true)
     end
@@ -87,6 +88,7 @@ describe Aws::Record::Batch do
     let(:food) do
       Class.new do
         include(Aws::Record)
+
         set_table_name('FoodTable')
         integer_attr(:id, hash_key: true, database_attribute_name: 'Food ID')
         string_attr(:dish, range_key: true)
@@ -97,6 +99,7 @@ describe Aws::Record::Batch do
     let(:breakfast) do
       Class.new(food) do
         include(Aws::Record)
+
         boolean_attr(:gluten_free)
       end
     end
@@ -104,6 +107,7 @@ describe Aws::Record::Batch do
     let(:drink) do
       Class.new do
         include(Aws::Record)
+
         set_table_name('DrinkTable')
         integer_attr(:id, hash_key: true)
         string_attr(:drink)
