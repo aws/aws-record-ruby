@@ -8,6 +8,7 @@ module Aws
       let(:klass) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TestTable')
           integer_attr(:id, hash_key: true)
           date_attr(:date, range_key: true, database_attribute_name: 'MyDate')
@@ -343,6 +344,7 @@ module Aws
           let(:klass_with_defaults) do
             Class.new do
               include(Aws::Record)
+
               set_table_name('TestTable')
               string_attr(:mykey, hash_key: true)
               map_attr(:dirty_map, default_value: {})
@@ -828,6 +830,7 @@ module Aws
           ::TEST_TABLE = Class.new do
             include(Aws::Record)
             include(ActiveModel::Validations)
+
             set_table_name('TestTable')
             integer_attr(:id, hash_key: true)
             date_attr(:date, range_key: true)

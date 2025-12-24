@@ -59,7 +59,7 @@ module Aws
       end
 
       def _check_if_reserved(name)
-        return unless @model_class.instance_methods.include?(name)
+        return unless @model_class.method_defined?(name)
 
         raise Errors::ReservedName, "Cannot name an attribute #{name}, that would collide with an " \
                                     'existing instance method.'

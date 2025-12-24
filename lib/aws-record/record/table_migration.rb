@@ -17,7 +17,7 @@ module Aws
       #  class. If this option is not included, a client will be constructed for
       #  you with default parameters.
       def initialize(model, opts = {})
-        _assert_model_valid(model)
+        valid_model?(model)
         @model = model
         @client = opts[:client] || model.dynamodb_client || Aws::DynamoDB::Client.new
         @client.config.user_agent_frameworks << 'aws-record'
@@ -130,7 +130,7 @@ module Aws
 
       private
 
-      def _assert_model_valid(model)
+      def valid_model?(model)
         _assert_required_include(model)
         model.model_valid?
       end

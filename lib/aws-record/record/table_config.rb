@@ -244,7 +244,7 @@ module Aws
         # we will only alter TTL status if we have a TTL attribute defined. We
         # may someday support explicit TTL deletion, but we do not yet do this.
         return unless @ttl_attribute
-        return if _ttl_compatibility_check
+        return if ttl_compatibility_check?
 
         client.update_time_to_live(
           table_name: @model_class.table_name,
@@ -268,7 +268,7 @@ module Aws
       # @return [Boolean] true if remote is compatible, false otherwise.
       def compatible?
         resp = @client.describe_table(table_name: @model_class.table_name)
-        _compatible_check(resp) && _ttl_compatibility_check
+        _compatible_check(resp) && ttl_compatibility_check?
       rescue DynamoDB::Errors::ResourceNotFoundException
         false
       end
@@ -285,14 +285,14 @@ module Aws
           _keys_equal(resp) &&
           _ad_equal(resp) &&
           _gsi_equal(resp) &&
-          _ttl_match_check
+          ttl_match_check?
       rescue DynamoDB::Errors::ResourceNotFoundException
         false
       end
 
       private
 
-      def _ttl_compatibility_check
+      def ttl_compatibility_check?
         if @ttl_attribute
           ttl_status = @client.describe_time_to_live(
             table_name: @model_class.table_name
@@ -305,7 +305,7 @@ module Aws
         end
       end
 
-      def _ttl_match_check
+      def ttl_match_check?
         ttl_status = @client.describe_time_to_live(
           table_name: @model_class.table_name
         )

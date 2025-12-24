@@ -8,6 +8,7 @@ module Aws
       let(:model) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TestTable')
           integer_attr(:id, hash_key: true)
         end
@@ -206,6 +207,7 @@ module Aws
           let(:model_a) do
             Class.new do
               include(Aws::Record)
+
               set_table_name('TestTable')
               integer_attr(:id, hash_key: true)
               string_attr(:class_name)
@@ -216,6 +218,7 @@ module Aws
           let(:model_b) do
             Class.new do
               include(Aws::Record)
+
               set_table_name('TestTable')
               integer_attr(:id, hash_key: true)
               string_attr(:class_name)

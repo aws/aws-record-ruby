@@ -8,6 +8,7 @@ module Aws
       let(:klass) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TestTable')
           integer_attr(:forum_id, hash_key: true)
           integer_attr(:post_id, range_key: true)
@@ -161,6 +162,7 @@ module Aws
       let(:parent_model) do
         Class.new do
           include(Aws::Record)
+
           integer_attr(:id, hash_key: true)
           string_attr(:name, range_key: true)
           string_attr(:message)
@@ -170,6 +172,7 @@ module Aws
       let(:child_model) do
         Class.new(parent_model) do
           include(Aws::Record)
+
           string_attr(:foo)
           string_attr(:bar)
         end

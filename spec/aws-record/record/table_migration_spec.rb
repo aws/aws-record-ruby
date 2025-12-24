@@ -37,6 +37,7 @@ module Aws
         let(:model) do
           model = Class.new do
             include(Aws::Record)
+
             set_table_name('TestTable')
             integer_attr(:id, hash_key: true)
           end
@@ -57,6 +58,7 @@ module Aws
         let(:klass) do
           Class.new do
             include(Aws::Record)
+
             set_table_name('TestTable')
             integer_attr(:id, hash_key: true)
             date_attr(:date, range_key: true, database_attribute_name: 'datekey')

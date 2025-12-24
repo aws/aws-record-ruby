@@ -54,8 +54,6 @@ Then(/^we expect the batch read result to include the following items:$/) do |st
   expect(expected.all? { |e| actual.include?(e) }).to be_truthy
 end
 
-private
-
 def remove_model_key(item)
   item.delete(:model)
   item

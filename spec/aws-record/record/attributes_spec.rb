@@ -15,6 +15,7 @@ module Aws
         let(:model) do
           Class.new do
             include(Aws::Record)
+
             string_attr(:id, hash_key: true)
             string_attr(:body)
           end
@@ -171,6 +172,7 @@ module Aws
           let(:klass) do
             Class.new do
               include(Aws::Record)
+
               set_table_name('TestTable')
               integer_attr(:id, hash_key: true)
               atomic_counter(:counter)
@@ -244,6 +246,7 @@ module Aws
         let(:parent_model) do
           Class.new do
             include(Aws::Record)
+
             integer_attr(:id, hash_key: true)
             date_attr(:date, range_key: true)
             list_attr(:list)
@@ -253,6 +256,7 @@ module Aws
         let(:child_model) do
           Class.new(parent_model) do
             include(Aws::Record)
+
             string_attr(:body)
           end
         end
@@ -260,6 +264,7 @@ module Aws
         let(:child_model2) do
           Class.new(parent_model) do
             include(Aws::Record)
+
             string_attr(:body2)
           end
         end

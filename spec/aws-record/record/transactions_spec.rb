@@ -12,6 +12,7 @@ module Aws
       let(:table_one) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TableOne')
           integer_attr(:id, hash_key: true)
           string_attr(:range, range_key: true)
@@ -23,6 +24,7 @@ module Aws
       let(:table_two) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TableTwo')
           string_attr(:uuid, hash_key: true)
           string_attr(:body)

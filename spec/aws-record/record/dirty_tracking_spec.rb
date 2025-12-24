@@ -194,6 +194,7 @@ describe Aws::Record::DirtyTracking do
       Class.new do
         include(ActiveModel::Model)
         include(Aws::Record)
+
         set_table_name(:test_table)
         string_attr(:mykey, hash_key: true)
         string_attr(:body)
@@ -317,6 +318,7 @@ describe Aws::Record::DirtyTracking do
         Class.new do
           include(Aws::Record)
           include(ActiveModel::Validations)
+
           set_table_name('TestTable')
           integer_attr(:id, hash_key: true)
           string_attr(:body)
@@ -335,6 +337,7 @@ describe Aws::Record::DirtyTracking do
       model = Class.new do
         include(Aws::Record)
         include(ActiveModel::Validations)
+
         set_table_name('TestTable')
         integer_attr(:id, hash_key: true)
         string_attr(:body)
@@ -424,6 +427,7 @@ describe Aws::Record::DirtyTracking do
       model = Class.new do
         include(Aws::Record)
         include(ActiveModel::Validations)
+
         set_table_name('TestTable')
         integer_attr(:id, hash_key: true)
         string_attr(:body)
@@ -480,6 +484,7 @@ describe Aws::Record::DirtyTracking do
     let(:klass) do
       Class.new do
         include(Aws::Record)
+
         set_table_name(:test_table)
         string_attr(:mykey, hash_key: true)
         string_attr(:body)
@@ -493,6 +498,7 @@ describe Aws::Record::DirtyTracking do
       let(:klass_with_defaults) do
         Class.new do
           include(Aws::Record)
+
           set_table_name(:test_table)
           string_attr(:mykey, hash_key: true)
           map_attr(:dirty_map, default_value: {})

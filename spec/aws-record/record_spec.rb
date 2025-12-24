@@ -28,6 +28,7 @@ module Aws
         expected = 'ExpectedTableName'
         ::UnitTestModelTwo = Class.new do
           include(Aws::Record)
+
           set_table_name(expected)
         end
         expect(::UnitTestModelTwo.table_name).to eq(expected)
@@ -48,6 +49,7 @@ module Aws
       let(:model) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TestTable')
         end
       end
@@ -84,6 +86,7 @@ module Aws
       let(:model) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TestTable')
         end
       end
@@ -111,6 +114,7 @@ module Aws
       let(:model) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TestTable')
           string_attr(:uuid, hash_key: true)
           attr(:mt, Aws::Record::Marshalers::StringMarshaler.new)
@@ -131,6 +135,7 @@ module Aws
       let(:model) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TestTable')
           string_attr(:uuid, hash_key: true)
           map_attr(:things, default_value: {})
@@ -147,6 +152,7 @@ module Aws
       let(:model) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('TestTable')
           string_attr(:uuid, hash_key: true)
           string_attr(:other_attr)
@@ -170,6 +176,7 @@ module Aws
       let(:parent_model) do
         Class.new do
           include(Aws::Record)
+
           set_table_name('ParentTable')
         end
       end
@@ -208,6 +215,7 @@ module Aws
       let(:parent_model) do
         Class.new do
           include(Aws::Record)
+
           integer_attr(:id, hash_key: true)
         end
       end
@@ -215,6 +223,7 @@ module Aws
       let(:child_model) do
         Class.new(parent_model) do
           include(Aws::Record)
+
           string_attr(:foo)
         end
       end
