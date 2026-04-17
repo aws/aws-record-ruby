@@ -23,11 +23,12 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
 
       - name: Install     
-        run: |
-          bundle install --without docs     
+        run:
+          bundle config set --local without 'docs'
+          bundle install
 
       - name: Test 
         run: bundle exec rake release:test
@@ -41,7 +42,7 @@ jobs:
         with:
           ruby-version: '4.0'
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
 
       - name: Install gems
         run: bundle install
