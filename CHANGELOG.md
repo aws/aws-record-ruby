@@ -1,4 +1,4 @@
-Unreleased Changes
+2.15.0 (2026-04-20)
 ------------------
 
 * Feature - Add `ostruct` as a dependency to support Ruby 4.0.
