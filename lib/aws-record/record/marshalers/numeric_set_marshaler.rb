@@ -3,11 +3,11 @@
 module Aws
   module Record
     module Marshalers
-      def initialize(opts = {})
-        # pass
-      end
-
       class NumericSetMarshaler
+        def initialize(opts = {})
+          # pass
+        end
+
         def type_cast(raw_value)
           case raw_value
           when nil, ''
