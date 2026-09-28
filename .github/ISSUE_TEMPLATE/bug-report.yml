@@ -60,9 +60,9 @@ body:
     validations:
       required: false
   - type: input
-    id: aws-sdk-ruby-record version
+    id: sdk-version
     attributes:
-      label: Gem version used
+      label: aws-record gem version
     validations:
       required: true
   - type: input
