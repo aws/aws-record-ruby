@@ -5,14 +5,6 @@
 A data mapping abstraction over the AWS SDK for Ruby's client for Amazon
 DynamoDB.
 
-This library is currently under development. More features will be added as we
-approach general availability, and while our initial release has as small of an
-API surface area as possible, the interface may change before the GA release.
-
-We would like to invite you to be a part of the ongoing development of this gem.
-We welcome your contributions, and would also be happy to hear from you about
-how you would like to use this gem. Feature requests are welcome.
-
 ## Table of Contents
 
 * [Installation](https://github.com/aws/aws-sdk-ruby-record#installation)
