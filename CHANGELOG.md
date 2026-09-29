@@ -1,5 +1,6 @@
 Unreleased Changes
 ------------------
+* Issue - Fix initializer for NumericSetMarshaler (#163)
 
 2.15.2 (2026-08-17)
 ------------------
