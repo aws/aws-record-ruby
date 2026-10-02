@@ -59,7 +59,7 @@ module Aws
         end
 
         context 'custom settings' do
-          it 'builds a marshaller' do
+          it 'builds a marshaler' do
             StringSetMarshaler.new({})
           end
         end
