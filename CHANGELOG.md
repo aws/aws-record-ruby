@@ -1,4 +1,4 @@
-Unreleased Changes
+2.15.3 (2026-10-02)
 ------------------
 * Issue - Fix the initializer for `NumericSetMarshaler`. (#163)
 
