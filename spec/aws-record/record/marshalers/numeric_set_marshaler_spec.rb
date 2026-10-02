@@ -57,6 +57,12 @@ module Aws
             end
           end
         end
+
+        context 'custom settings' do
+          it 'builds a marshaler' do
+            NumericSetMarshaler.new({})
+          end
+        end
       end
     end
   end
