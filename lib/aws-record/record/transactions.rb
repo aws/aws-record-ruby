@@ -258,8 +258,8 @@ module Aws
                     'currently supported. You should rewrite this case to use ' \
                     'a :put transaction, adding the existence check to your ' \
                     "own condition expression if desired.\n" \
-                    "\tItem: #{JSON.pretty_unparse(save_record.to_h)}\n" \
-                    "\tExtra Options: #{JSON.pretty_unparse(opts)}"
+                    "\tItem: #{JSON.pretty_generate(save_record.to_h)}\n" \
+                    "\tExtra Options: #{JSON.pretty_generate(opts)}"
             else
               opts = opts.merge(safety_expression)
               _transform_put_record(save_record, opts)
